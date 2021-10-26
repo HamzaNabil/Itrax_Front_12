@@ -1,0 +1,33 @@
+/* selector { => Rule
+    property: value;  decelaration
+    property: value;  
+    property: value;  
+    property: value;  
+    property: value;  
+} */
+
+h1 {
+  color: red;
+  background: #000;
+}
+
+table {
+  background: yellow;
+  color: green;
+}
+
+fieldset {
+  background: gray;
+}
+
+a {
+  color: yellow;
+}
+
+.link {
+  color: red;
+  font-size: 25px;
+}
+
+.legend {
+}
