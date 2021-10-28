@@ -1,0 +1,57 @@
+section {
+  height: 200px;
+  color: #fff;
+  text-align: center;
+}
+
+.home {
+  background-color: #333;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
+}
+
+.about {
+  background-color: #00f;
+  padding: 10px;
+  border: 2px solid red;
+  letter-spacing: 2px ;
+  text-transform: capitalize;
+}
+
+.ele {
+  width: 200px;
+  height: 100px;
+  color: #fff;
+  background-color: black;
+  position: relative
+  
+}
+
+.ele p {
+  color: yellow;
+  position: absolute;
+  right: 0
+}
+
+.ele1 {
+  position: relative;
+  width: 100px;
+  display: inline-block;
+  left: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+body {
+  height: 2000px;
+}
+
+.ele2 {
+  background-color: red;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  top: 0;
+}
