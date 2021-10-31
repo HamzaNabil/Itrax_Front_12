@@ -1,0 +1,177 @@
+.parent {
+  background-color: blue;
+}
+
+.child {
+  width: 30%;
+  height: 200px;
+  float: left;
+}
+
+.child1 {
+  background: yellow;
+}
+.child2 {
+  background-color: green;
+}
+.child3 {
+  background-color: orange;
+}
+
+.clearfix {
+  clear: both;
+}
+
+
+
+/* ul {
+    list-style: none;
+}
+
+ul li {
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
+}
+
+ul li a {
+    text-decoration: none;
+    background-color: gray;
+    color: orange;
+    display: block;
+    width: 100px;
+    padding: 10px 0;
+    border: 2px solid orange
+}
+
+ul li a:hover {
+    background: orange;
+    color: black;
+} */
+
+p {
+    color: red;
+}
+
+p:before {
+    content: "";
+    display: inline-block;
+
+    border-top: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid red;
+}
+
+/* Grouping */
+.text , .hamada {
+    width: 100px;
+    height: 100px;
+    background: blue;
+}
+
+/* Span */
+/* <span class="demo"></span> */
+span.demo {
+
+}
+
+/* <span> <i class="demo"></i> </span> */
+span .demo {
+
+}
+
+#code {
+    color: yellow;
+}
+
+.demo {
+    color: blue;
+}
+
+div span .test #code .hamada p {
+
+}
+
+
+
+/* 
+/* Specificity 
+/* id  class element   
+    1   0     0       =  100
+    0   1     0       = 10
+    1   1     1       = 111
+    1   2     3       = 123 */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 
+    Header
+*/
+
+header {
+    padding: 20px 100px;
+}
+
+header .logo {
+    float: left;
+}
+
+header nav {
+    float: right;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline-block;
+}
+
+header nav a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+}
+
+header nav a i {
+    color: gray;
+}
+
+header nav a.buy-now {
+    background-color: blue;
+    color: #fff;
+    border-radius: 7px;
+    margin-left: 35px;
+    padding: 10px 20px;
+}
+
+header nav a.buy-now:hover {
+    background-color: #009;
+}
+
+header nav a.buy-now i {
+    color: #fff;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    display: none;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
