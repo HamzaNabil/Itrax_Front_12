@@ -1,0 +1,35 @@
+
+/* Mobile */
+@media (max-width: 575px) {
+    
+    .products {
+        flex-direction: column;
+    }
+
+    .product {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Samll */
+@media (min-width: 576px) and (max-width: 768px) {
+    .products {
+        flex-direction: column;
+    }
+
+    .product {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Medium */
+@media (min-width: 789px) and (max-width: 991px) {
+
+} 
+
+/* Large */
+@media (min-width: 992px) {
+    
+}
