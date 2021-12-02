@@ -96,5 +96,11 @@ var car = {
   color: "black",
 };
 
+// Task Code ↓
+
 // create an array that hold all keys of car object
 // print all value of car object depend on array U create it
+var carArr = ["name", "year", "price", "model", "color"];
+for (var i = 0; i < carArr.length; i++) {
+  console.log(car[carArr[i]]);
+}
