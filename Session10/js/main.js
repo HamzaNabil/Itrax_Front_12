@@ -1,4 +1,3 @@
-
 // // Define Variables
 // const titleEl = document.querySelector('input:first-of-type');
 // const descEl = document.querySelector('input:nth-of-type(2)');
@@ -7,7 +6,7 @@
 // const ulEl = document.querySelector('ul');
 // var products = [];
 
-// // Events 
+// // Events
 // formEl.addEventListener("submit", addItem)
 
 // // Function
@@ -19,18 +18,18 @@
 //     desc: descEl.value,
 //     price: priceEl.value
 //   }
-//   products.push(item);
+//   products.push(item);[ {} , {} , {} ]
 //   ulEl.innerHTML = "";
 //   for(var i = 0; i < products.length; i++) {
 //     ulEl.innerHTML += "<li>" + products[i].title +  products[i].desc +  products[i].price +  "</li>"
 //   }
 // }
 
-// undefined | err 
+// undefined | err
 
 // var x; // x is defined but value is undefined
 
-// console.log(x); // err is not defined 
+// console.log(x); // err is not defined
 
 // var x = 2;
 
@@ -46,14 +45,13 @@ function printUser() {
 }
 
 // Expression Function
-var printData = function() {
+var printData = function () {
   console.log("Data");
-}
+};
 
 printData();
 
-// Arrow Function 
+// Arrow Function
 let test = () => {
   console.log("test");
-}
-
+};
