@@ -1,0 +1,36 @@
+function loadDoc() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.open("GET", "https://jsonplaceholder.typicode.com/todos", true);
+  xhttp.send();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      console.log(this.responseText);
+    }
+  };
+}
+
+loadDoc();
+
+
+onreadystatechange	Defines a function to be called when the readyState property changes
+readyState	Holds the status of the XMLHttpRequest.
+0: request not initialized
+1: server connection established
+2: request received
+3: processing request
+4: request finished and response is ready
+status	200: "OK"
+404: "Page not found"
+
+
+
+
+
+function loadDoc() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("demo").innerHTML = this.responseText;
+    }
+  xhttp.open("GET", "ajax_info.txt", true);
+  xhttp.send();
+}
