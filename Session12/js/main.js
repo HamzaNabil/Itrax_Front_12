@@ -62,6 +62,21 @@ function emptyInputs() {
 }
 
 function deleteTodo(id) {
-  todos.splice(id, 1);
+  //  todos [ {} , ]
+  let indx = todos.findIndex((todo) => todo.id == id);
+  todos.splice(indx, 1);
   displayTodos();
 }
+
+// let a = ["hamza", "sayed", "mostafa"];
+
+// splice(startIndex , number of elemet to delete , added element)
+
+// let indx = a.findIndex(function (x) {
+//   return x == "hamza";
+// });
+
+// console.log(indx);
+// a.splice(indx, 1);
+
+// console.log(a);

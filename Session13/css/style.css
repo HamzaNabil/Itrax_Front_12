@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+form {
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+input {
+  display: block;
+  height: 40px;
+  padding: 5px;
+  width: 50%;
+  margin-bottom: 10px;
+}
