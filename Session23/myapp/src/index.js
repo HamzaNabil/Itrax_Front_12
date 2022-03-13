@@ -1,18 +1,9 @@
 import React from "react"; // jsx
 import ReactDOM from "react-dom";
-import App from "./App"; // comp  => call  <App />
+import App from "./App";
+import "./index.css";
 
-// Hamada  => root
-// let comp2 = (
-//   <div>
-//     <h2>this is comp2</h2>
-//   </div>
-// );
-// let comp1 = (
-//   <div>
-//     <h2>This is comp1</h2>
-//     {comp2}
-//   </div>
-// );
-
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+  <App test="ay 7aga" name="app" hamada="123" />,
+  document.getElementById("root")
+);
