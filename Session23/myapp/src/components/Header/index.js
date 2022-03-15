@@ -19,7 +19,7 @@ class Header extends Component {
     name: "Header Comp",
   };
   render() {
-    console.log(this.props);
+    console.log(this.props); // {x: 1, y:2}
     return (
       <div className="header">
         <label htmlFor="user"> username </label>
