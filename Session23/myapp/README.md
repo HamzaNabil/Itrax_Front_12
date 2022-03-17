@@ -64,3 +64,23 @@
 - Lists & Keys
 
 - Conitional Rendering
+
+- Events
+
+- Forms & Inputs
+
+- Images
+
+# Session 4
+
+- Todo Task
+
+- Simple Listing Users App
+
+  - Login
+  - Register
+  - Add
+  - List
+  - View
+  - Edit
+  - Delete

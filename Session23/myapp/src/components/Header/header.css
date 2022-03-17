@@ -1,3 +1,7 @@
-.header h2 {
-  color: red;
+.header {
+  background-color: blueviolet;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  height: 35px;
 }

@@ -1,3 +1,7 @@
-.footer h2 {
-  color: blue;
+.footer {
+  background-color: blueviolet;
+  color: #fff;
+  text-align: center;
+  height: 35px;
+  padding: 10px;
 }
