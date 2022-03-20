@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import UserLogin from "../UserLogin";
+import UserRegister from "../UserRegister";
+import List from "./List";
 
 class UserListing extends Component {
   state = {
@@ -14,18 +17,25 @@ class UserListing extends Component {
     user: null,
   };
 
+  // AddUser
+
+  // Edit User
+
+  // Change in Register Input
   handleRegisterUser = (e) => {
     this.setState({
       reigsterUser: e.target.value,
     });
   };
 
+  // Change in Login Input
   handleLoginUser = (e) => {
     this.setState({
       loginUser: e.target.value,
     });
   };
 
+  // Register User Submit
   handleRegisterSubmit = (e) => {
     e.preventDefault();
     localStorage.setItem("user", this.state.reigsterUser);
@@ -34,6 +44,7 @@ class UserListing extends Component {
     });
   };
 
+  // Login User Submit
   handleLoginSubmit = (e) => {
     e.preventDefault();
     let loginUser = this.state.loginUser;
@@ -46,34 +57,7 @@ class UserListing extends Component {
     }
   };
 
-  renderLoginForm = () => {
-    return (
-      <form onSubmit={this.handleLoginSubmit}>
-        <input
-          type="text"
-          placeholder="login User"
-          value={this.state.loginUser}
-          onChange={this.handleLoginUser}
-        />
-        <input type="submit" value="login" />
-      </form>
-    );
-  };
-
-  renderRegisterForm = () => {
-    return (
-      <form onSubmit={this.handleRegisterSubmit}>
-        <input
-          type="text"
-          value={this.state.reigsterUser}
-          placeholder="register User"
-          onChange={this.handleRegisterUser}
-        />
-        <input type="submit" value="register" />
-      </form>
-    );
-  };
-
+  // Delete User
   handleDeleteUser = (id) => {
     let users = this.state.users.filter((user) => user.id != id);
     this.setState({
@@ -81,45 +65,36 @@ class UserListing extends Component {
     });
   };
 
+  // View User
   handleViewUser = (user) => {
     this.setState({
       user: user,
     });
   };
 
-  renderUsersList = () => {
-    return (
-      <div>
-        {this.state.users.map((user) => {
-          return (
-            <p key={user.id}>
-              <span onClick={() => this.handleViewUser(user)}>{user.name}</span>
-              <button onClick={() => this.handleDeleteUser(user.id)}>
-                delete
-              </button>
-            </p>
-          );
-        })}
-        {this.state.user ? (
-          <p>
-            {this.state.user.name} - {this.state.user.age} -
-            {this.state.user.price} -
-          </p>
-        ) : (
-          ""
-        )}
-      </div>
-    );
-  };
-
   render() {
     return (
       <div>
-        {this.state.logged
-          ? this.renderUsersList()
-          : this.state.isRegistered
-          ? this.renderLoginForm()
-          : this.renderRegisterForm()}
+        {this.state.logged ? (
+          <List
+            users={this.state.users}
+            viewUser={this.handleViewUser}
+            deleteUser={this.handleDeleteUser}
+            user={this.state.user}
+          />
+        ) : this.state.isRegistered ? (
+          <UserLogin
+            handleLoginSubmit={this.handleLoginSubmit}
+            handleLoginUser={this.handleLoginUser}
+            loginUser={this.state.loginUser}
+          />
+        ) : (
+          <UserRegister
+            handleRegisterSubmit={this.handleRegisterSubmit}
+            reigsterUser={this.state.reigsterUser}
+            handleRegisterUser={this.handleRegisterUser}
+          />
+        )}
       </div>
     );
   }

@@ -9,3 +9,24 @@ p {
 
 ul {
 }
+
+a.active {
+  color: red;
+}
+header {
+  background-color: brown;
+  color: #fff;
+  padding: 10px;
+  height: 35px;
+}
+header ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+}
+
+header ul a {
+  display: block;
+  margin: 0 10px;
+  color: #fff;
+}

@@ -84,3 +84,21 @@
   - View
   - Edit
   - Delete
+
+# Session 5
+
+- React Router DOM
+
+- LifeCycle Methods
+
+- Fragment
+
+- Simple Listing Users App Cont.
+
+  - Login
+  - Register
+  - Add
+  - List
+  - View
+  - Edit
+  - Delete
