@@ -30,3 +30,11 @@ header ul a {
   margin: 0 10px;
   color: #fff;
 }
+
+.posts a {
+  display: block;
+  margin: 5px;
+  border: 1px solid gray;
+  padding: 10px;
+  text-decoration: none;
+}

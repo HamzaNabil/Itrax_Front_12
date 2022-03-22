@@ -102,3 +102,17 @@
   - View
   - Edit
   - Delete
+
+# Session 6
+
+- Sending Requests
+
+- LifeCycle Methods
+
+- Class | Function
+
+- Sending Props via Class | function
+
+- Destructing State | Props
+
+- Hooks Intro [ useState ]

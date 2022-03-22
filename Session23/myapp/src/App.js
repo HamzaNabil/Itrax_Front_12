@@ -9,13 +9,40 @@ import RegisterUser from "./components/RegisterUser";
 import UserListing from "./components/UserListing";
 import Home from "./components/Home";
 import About from "./components/About";
-import Contact from "./components/Contact";
 
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import Test from "./components/Test";
+import Posts from "./components/Posts";
+import PostDetails from "./components/PostDetails";
+import axios from "axios";
+import Counter from "./components/Counter";
+import CounterHook from "./components/CounterHook";
+import Login from "./components/Login";
 
 class App extends Component {
-  state = {};
+  constructor() {
+    super(); // inherit
+    console.log("Construtor");
+    this.state = {
+      loading: null,
+      posts: [],
+      err: null,
+    };
+  }
+
+  // LifeCycle Methods
+  componentDidMount() {
+    // requests
+    this.setState({ loading: true });
+    axios
+      .get("https://jsonplaceholder.typicode.com/posts")
+      .then((res) => {
+        this.setState({ posts: res.data, loading: null });
+      })
+      .catch(() => {
+        this.setState({ err: "Something went wrong!", loading: null });
+      });
+  }
 
   render() {
     return (
@@ -29,7 +56,7 @@ class App extends Component {
               <NavLink to="/about">About</NavLink>
             </li>
             <li>
-              <NavLink to="/contact">Contact</NavLink>
+              <NavLink to="/posts">Posts</NavLink>
             </li>
             <li>
               <NavLink to="/user-list">User Listing</NavLink>
@@ -45,8 +72,23 @@ class App extends Component {
             <Route path="/about" element={<About />}>
               <Route path="test" element={<Test />} />
             </Route>
-            <Route path="/contact" element={<Contact />} />
+            <Route
+              path="/posts"
+              element={
+                <Posts
+                  loading={this.state.loading}
+                  posts={this.state.posts}
+                  err={this.state.err}
+                />
+              }
+            />
+            <Route
+              path="/posts/:id"
+              element={<PostDetails posts={this.state.posts} />}
+            />
+            <Route path="/counter" element={<CounterHook />} />
             <Route path="/user-list" element={<UserListing />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
           {/* <TodoApp /> */}
           {/* <UserListing /> */}

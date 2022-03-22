@@ -1,47 +1,20 @@
-import React, { Component } from "react";
+import React, { useRef } from "react";
+// ref
+function Login() {
+  let nienfief = useRef();
+  let myInput = useRef();
+  console.log(myInput);
 
-class Login extends Component {
-  state = {
-    user: "",
-    pass: "",
-  };
+  // componentDidMount () {
 
-  handleUserChange = (event) => {
-    this.setState({
-      user: event.target.value,
-    });
-  };
+  // myInput.current.focus()   // after mounting componentDidMount
+  // }
 
-  handlePasswordChange = (event) => {
-    this.setState({
-      pass: event.target.value,
-    });
-  };
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(this.state);
-  };
-
-  render() {
-    return (
-      <div className="login">
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            onChange={this.handleUserChange}
-            placeholder="Enter Username"
-          />
-          <input
-            type="password"
-            placeholder="Enter Pass"
-            onChange={this.handlePasswordChange}
-          />
-          <input type="submit" value="Login" />
-        </form>
-      </div>
-    );
-  }
+  return (
+    <div className="login" ref={nienfief}>
+      <input type="text" placeholder="Enter username" ref={myInput} />
+    </div>
+  );
 }
 
 export default Login;
