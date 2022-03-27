@@ -119,10 +119,22 @@
 
 # Session 7
 
-- Shopping Cart: 
+- Shopping Cart:
   - data
   - List Products
   - View Product Details
   - Add Product
   - Edit Product
   - Delete Product
+
+# Session 8
+
+- useEffect
+
+- useContext
+
+- Delete Product
+
+- Filter with Price
+
+- Redux Intro
