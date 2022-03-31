@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import Product from "../components/Product";
 import ProductContext from "../context/ProductContext";
 
 function ListProducts(props) {
-  let products = useContext(ProductContext);
+  let { products } = props;
   return (
     <div className="boxes">
       {products.map((product) => (

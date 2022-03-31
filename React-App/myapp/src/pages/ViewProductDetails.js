@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom";
 import Product from "../components/Product";
 import ProductContext from "../context/ProductContext";
 
-function ViewProductDetails() {
-  let products = useContext(ProductContext);
+function ViewProductDetails(props) {
+  let { products } = props;
   let params = useParams();
 
   let product = products.find((product) => product.id == params.id);

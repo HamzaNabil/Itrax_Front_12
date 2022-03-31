@@ -8,6 +8,7 @@ import ListProducts from "./pages/ListProducts";
 import CreateProduct from "./pages/CreateProduct";
 import ViewProductDetails from "./pages/ViewProductDetails";
 import ProductContext from "./context/ProductContext";
+import Counter from "./Counter";
 
 function App() {
   let [products, setProducts] = useState(items);
@@ -47,37 +48,42 @@ function App() {
 
   return (
     <BrowserRouter>
-      <ProductContext.Provider value={products}>
-        <Header />
-        <main>
-          <select onChange={handleFilter}>
-            <option value="1000">1000</option>
-            <option value="2000">2000</option>
-            <option value="3000">3000</option>
-          </select>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route
-              path="/products"
-              element={
-                <ListProducts handleDeleteProduct={handleDeleteProduct} />
-              }
-            />
-            <Route
-              path="/create"
-              element={
-                <CreateProduct
-                  handleTitleChange={handleTitleChange}
-                  handlePriceChange={handlePriceChange}
-                  handleAddProduct={handleAddProduct}
-                />
-              }
-            />
-            <Route path="/products/:id" element={<ViewProductDetails />} />
-          </Routes>
-        </main>
-        <Footer />
-      </ProductContext.Provider>
+      <Header />
+      <main>
+        <select onChange={handleFilter}>
+          <option value="1000">1000</option>
+          <option value="2000">2000</option>
+          <option value="3000">3000</option>
+        </select>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/products"
+            element={
+              <ListProducts
+                products={products}
+                handleDeleteProduct={handleDeleteProduct}
+              />
+            }
+          />
+          <Route path="/counter" element={<Counter />} />
+          <Route
+            path="/create"
+            element={
+              <CreateProduct
+                handleTitleChange={handleTitleChange}
+                handlePriceChange={handlePriceChange}
+                handleAddProduct={handleAddProduct}
+              />
+            }
+          />
+          <Route
+            path="/products/:id"
+            element={<ViewProductDetails products={products} />}
+          />
+        </Routes>
+      </main>
+      <Footer />
     </BrowserRouter>
   );
 }

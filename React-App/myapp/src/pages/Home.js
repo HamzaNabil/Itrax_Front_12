@@ -10,8 +10,6 @@ function Home() {
   let [posts, setPosts] = useState([]);
   let inputRef = useRef();
 
-  console.log(inputRef);
-
   // cdm + cdu // sideEffect
   useEffect(() => {
     // inputRef.current.foucs();
