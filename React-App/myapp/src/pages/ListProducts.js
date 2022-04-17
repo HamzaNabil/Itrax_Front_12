@@ -5,10 +5,11 @@ import Product from "../components/Product";
 import ProductContext from "../context/ProductContext";
 
 function ListProducts(props) {
-  let { products } = props;
+  const { product } = useSelector((state) => state); // {user: , product: , counter}
+  // let { products } = props;
   return (
     <div className="boxes">
-      {products.map((product) => (
+      {product.products.map((product) => (
         <div className="box">
           <NavLink to={`/products/${product.id}`} className="" key={product.id}>
             <Product product={product} />

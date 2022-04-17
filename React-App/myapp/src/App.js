@@ -9,6 +9,7 @@ import CreateProduct from "./pages/CreateProduct";
 import ViewProductDetails from "./pages/ViewProductDetails";
 import ProductContext from "./context/ProductContext";
 import Counter from "./Counter";
+import Users from "./Users";
 
 function App() {
   let [products, setProducts] = useState(items);
@@ -50,23 +51,19 @@ function App() {
     <BrowserRouter>
       <Header />
       <main>
-        <select onChange={handleFilter}>
+        {/* <select onChange={handleFilter}>
           <option value="1000">1000</option>
           <option value="2000">2000</option>
           <option value="3000">3000</option>
-        </select>
+        </select> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
             path="/products"
-            element={
-              <ListProducts
-                products={products}
-                handleDeleteProduct={handleDeleteProduct}
-              />
-            }
+            element={<ListProducts handleDeleteProduct={handleDeleteProduct} />}
           />
           <Route path="/counter" element={<Counter />} />
+          <Route path="/users" element={<Users />} />
           <Route
             path="/create"
             element={
@@ -77,10 +74,7 @@ function App() {
               />
             }
           />
-          <Route
-            path="/products/:id"
-            element={<ViewProductDetails products={products} />}
-          />
+          <Route path="/products/:id" element={<ViewProductDetails />} />
         </Routes>
       </main>
       <Footer />

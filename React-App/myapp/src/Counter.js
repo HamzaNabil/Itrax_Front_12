@@ -1,34 +1,25 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  decrementAction,
-  incrementAction,
-  incrementByValueAction,
-} from "./redux/actions";
-
+import { decrementAction, incrementAction } from "./redux/actions";
+// dispatch
 function Counter() {
-  let { count } = useSelector((state) => state); // {count: 0}
-  let dispatch = useDispatch();
-  // Action Creator => function return action
-  let handleIncrement = () => {
-    dispatch(incrementAction());
+  const { counter } = useSelector((state) => state); // {counter: {count: 0} , user: {users: []}}
+  const dispatch = useDispatch();
+
+  const handleIncrement = () => {
+    // dispatch(incrementAction());
+    incrementAction(dispatch);
   };
 
-  let handleDecrement = () => {
-    dispatch(decrementAction());
+  const handleDecrement = () => {
+    // dispatch(decrementAction());
+    decrementAction(dispatch);
   };
-
-  let handleIncrementByValue = (value) => {
-    dispatch(incrementByValueAction(value));
-  };
-
   return (
     <div>
       <button onClick={handleIncrement}> +1 </button>
-      {count}
+      {counter.count}
       <button onClick={handleDecrement}> -1 </button>
-
-      <button onClick={() => handleIncrementByValue(5)}> +5</button>
     </div>
   );
 }

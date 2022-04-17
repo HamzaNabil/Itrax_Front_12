@@ -1,21 +1,7 @@
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
+import reducer from "./reducers";
+import thunk from "redux-thunk"; // middleware
 
-function reducer(state = { count: 0 }, action) {
-  switch (action.type) {
-    case "increment":
-      return { count: state.count + 1 };
-
-    case "decrement":
-      return { count: state.count - 1 };
-
-    case "incrementByValue":
-      return { count: state.count + action.x };
-
-    default:
-      return state;
-  }
-}
-
-let store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(thunk));
 
 export default store;

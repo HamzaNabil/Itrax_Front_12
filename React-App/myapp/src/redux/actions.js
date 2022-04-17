@@ -1,20 +1,38 @@
-// Actions Creators  => function return action
+// Action Creator => function return action(object)
 
-export function incrementAction() {
-  return {
-    type: "increment",
-  };
+import {
+  DECREMENT,
+  FETCH_ERR,
+  FETCH_START,
+  FETCH_USERS,
+  INCREMENT,
+} from "./types";
+
+export function incrementAction(dispatch) {
+  return dispatch({
+    type: INCREMENT,
+  });
 }
 
-export function decrementAction() {
-  return {
-    type: "decrement",
-  };
+export function decrementAction(dispatch) {
+  return dispatch({
+    type: DECREMENT,
+  });
 }
 
-export function incrementByValueAction(vl) {
-  return {
-    type: "incrementByValue",
-    x: vl,
-  };
+export function fetchUsers(dispatch) {
+  dispatch({ type: FETCH_START });
+  fetch("https://jsonplaceholder.typicode.com/users")
+    .then((res) => res.json())
+    .then((data) => {
+      dispatch({
+        type: FETCH_USERS,
+        data: data,
+      });
+    })
+    .catch((err) => {
+      dispatch({ type: FETCH_ERR });
+    });
 }
+
+// redux thunk
