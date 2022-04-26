@@ -1,0 +1,84 @@
+@import "./sass/pages/home";
+@import "./sass/pages/about";
+@import "./sass/pages/contact";
+@import "./sass/components/header";
+
+// Variables
+$mainColor: blue;
+$size: 14px;
+
+p {
+  color: $mainColor;
+  margin: $size;
+}
+
+span {
+  color: $mainColor;
+}
+
+section {
+  border: 1px solid $mainColor;
+}
+
+// General
+
+.general {
+  width: 100px;
+  height: 100px;
+}
+
+.test {
+  @extend .general;
+  background-color: blue;
+}
+
+.demo {
+  @extend .general;
+  background-color: yellow;
+}
+
+// Mixin
+@mixin css($vl) {
+  -webkit-border-radius: $vl;
+  -moz-border-radius: $vl;
+  -o-border-radius: $vl;
+  -ms-border-radius: $vl;
+  border-radius: $vl;
+}
+
+@mixin makeCircle($vl) {
+  border-radius: 50%;
+  width: $vl;
+  height: $vl;
+}
+
+.hello {
+  @include css(10px);
+  @include makeCircle(50px);
+}
+
+.l {
+  @include makeCircle(10px);
+}
+
+// Nesting
+button {
+  color: red;
+  &:hover {
+  }
+  span {
+    &:hover {
+    }
+  }
+}
+
+// JS =>
+// React
+
+// Ecommerce => JS => React + Redux 70%
+
+// Design => React
+
+// 3 JS  3 HTML CSS Bootrstrap 3 => React => Git
+
+// Wuzzef LinkedIn

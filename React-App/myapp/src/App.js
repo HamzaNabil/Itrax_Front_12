@@ -10,11 +10,14 @@ import ViewProductDetails from "./pages/ViewProductDetails";
 import ProductContext from "./context/ProductContext";
 import Counter from "./Counter";
 import Users from "./Users";
+import { deleteProduct, addProduct } from "./redux/actions";
+import { useDispatch, useSelector } from "react-redux";
 
 function App() {
-  let [products, setProducts] = useState(items);
+  let { product } = useSelector((state) => state);
   let [title, setTitle] = useState("");
   let [price, setPrice] = useState(0);
+  const dispatch = useDispatch();
 
   // Logic
   let handleTitleChange = (e) => {
@@ -28,23 +31,23 @@ function App() {
   let handleAddProduct = (e) => {
     e.preventDefault();
     let addedProduct = {
-      id: products.length + 1,
+      id: product.products.length + 1,
       title: title,
       price: price,
       imgUrl: "",
     };
-    setProducts([...products, addedProduct]);
+    dispatch(addProduct(addedProduct));
+    // setProducts([...products, addedProduct]);
   };
 
   // id 2
   let handleDeleteProduct = (id) => {
-    let allProducts = products.filter((p) => p.id != id);
-    setProducts(allProducts);
+    dispatch(deleteProduct(id));
   };
 
   let handleFilter = (e) => {
     let allProducts = items.filter((p) => p.price == e.target.value);
-    setProducts(allProducts);
+    // setProducts(allProducts);
   };
 
   return (

@@ -7,7 +7,7 @@ function Users() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetchUsers(dispatch);
+    dispatch(fetchUsers());
   }, []);
 
   return (

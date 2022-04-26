@@ -7,6 +7,10 @@ import ProductContext from "../context/ProductContext";
 function ListProducts(props) {
   const { product } = useSelector((state) => state); // {user: , product: , counter}
   // let { products } = props;
+
+  {
+    console.log(product.products);
+  }
   return (
     <div className="boxes">
       {product.products.map((product) => (
